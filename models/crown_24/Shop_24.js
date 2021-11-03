@@ -25,7 +25,6 @@ const Shop_24 = class Shop_24 {
       text: 'SELECT * FROM shop_24 WHERE cat_id = $1',
       values: [id]
     }
-    //there is no parameter $1
     try {
       const results = await db.query(query);
       //console.log('server getCatId', JSON.stringify(results));
