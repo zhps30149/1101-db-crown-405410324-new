@@ -24,9 +24,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+app.use('/api_24', api_24_Router);
+
+/* crown_24 */
 app.use('/crown_24', crown_24_Router);
 app.use('/crown2_24', crown2_24_Router);
-app.use('/api_24', api_24_Router);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

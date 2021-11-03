@@ -6,7 +6,6 @@
     <title>Crown Clothing</title>
     <link rel="stylesheet" href="/crown_24/css/style.css" />
   </head>
-
   <body>
     <div class="header">
       <a href="/crown2_24" class="logo-container">
@@ -17,11 +16,7 @@
         <a href="/shop_24" class="option">Contact</a>
         <a href="/signin" class="option">Sign In</a>
         <div class="cart-icon" onclick="cartToggle()">
-          <img
-            class="shopping-icon"
-            src="/crown_24/assets/shopping-bag.svg"
-            alt=""
-          />
+          <img class="shopping-icon" src="./assets/shopping-bag.svg" alt="" />
         </div>
         <div class="cart-dropdown">
           <div class="cart-items">
@@ -42,25 +37,27 @@
                 <span class="price">1 * $90</span>
               </div>
             </div>
+            <button class="custom-button">GO TO CHECKOUT</button>
           </div>
-          <button class="custom-button">GO TO CHECKOUT</button>
         </div>
       </div>
     </div>
 
-    <div class="homepage">
-      <h3><%= title %> -- <%= name %> <%= id %></h3>
-
-      <div class="directory-menu">
-        <% data.forEach( item => { %>
-        <div class="<%= item.size %> menu-item">
-          <img class="background-image" src="<%= item.remote_url %>" alt="" />
-          <a href="<%= item.link_url %>" class="content">
-            <h1 class="title"><%= item.name %></h1>
-            <span class="subtitle">SHOP NOW</span>
-          </a>
+    <div class="shop-page">
+      <div class="collection-page">
+        <h1 class="title"><%= title %> -- <%= name %> <%= id %></h1>
+        <div class="items">
+          <% data.forEach( item => { %>
+          <div class="collection-item">
+            <img class="image" src="<%= item.remote_url %>" />
+            <div class="collection-footer">
+              <span class="name"><%= item.name %></span>
+              <span class="price"><%= item.price %></span>
+            </div>
+            <button class="custom-button">Add to Cart</button>
+          </div>
+          <% }); %>
         </div>
-        <% }) %>
       </div>
     </div>
 
